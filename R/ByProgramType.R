@@ -15,7 +15,7 @@ ByProgramType <- function(Year, with_summary = TRUE) {
 
     summary <- alldata %>%
       group_by(ProgramType) %>%
-      summarise(PreparedByMajor = sum(PreparedByMajor), PreparedByArea = sum(PreparedByArea), PreparedBySubject = sum(PreparedBySubject)) %>%
+      summarise(PreparedByMajor = sum(TotalPreppedm), PreparedByArea = sum(TotalPreppeda), PreparedBySubject = sum(TotalPreppeds)) %>%
       mutate(State = 'USA') %>%
       select(c(5, 1:4)) %>%
       adorn_totals(name = 'USA Total')
