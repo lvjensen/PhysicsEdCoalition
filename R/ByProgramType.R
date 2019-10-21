@@ -1,6 +1,9 @@
 
+#' @title My function that does this
+#' @param Year is digit numeric number of the year
+#' @param with_summary defaults to TRUE. Adds a summary (total) row and the bottom of the table.
 
-
+#' @export
 
 ByProgramType <- function(Year, with_summary = TRUE) {
 
