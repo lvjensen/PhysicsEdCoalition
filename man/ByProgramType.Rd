@@ -2,7 +2,7 @@
 % Please edit documentation in R/ByProgramType.R
 \name{ByProgramType}
 \alias{ByProgramType}
-\title{My function that does this}
+\title{ByProgramType}
 \usage{
 ByProgramType(Year, with_summary = TRUE)
 }
@@ -12,5 +12,5 @@ ByProgramType(Year, with_summary = TRUE)
 \item{with_summary}{defaults to TRUE. Adds a summary (total) row and the bottom of the table.}
 }
 \description{
-My function that does this
+Creates an table of wrangled data from the Physics Teacher Education Coalition websites organized by Program Type(Traditional, Alternative IHE-based or Alternative not IHE-based)
 }

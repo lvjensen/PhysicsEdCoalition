@@ -1,4 +1,14 @@
+#' @title PhysicsEdData
+#' @description Creates a CSV file for desired version of wrangled data from the Physics Teacher Education Coalition report card website
+#' @param Year is digit numeric number of the year
+#' @param ByProgram is boolean to create csv file for ByProgram
+#' @param ByProgramFileName is character, if ByProgram is TRUE the file will receive this name
+#' @param ByProgramType is boolean to create csv file for ByProgramType
+#' @param ByProgramTypeFileName is character, if ByProgramType is TRUE the file will receive this name
+#' @param ByState is boolean to create csv file for ByProgram
+#' @param ByStateFileName is character, if ByState is TRUE the file will receive this name
 
+#' @export
 
 
 PhysicsEdData <- function(Year, ByProgram = FALSE, ByProgramFileName = 'pfilename', ByProgramType = FALSE, ByProgramTypeFileName = 'ptfilename', ByState = FALSE, ByStateFileName = 'sfilename') {

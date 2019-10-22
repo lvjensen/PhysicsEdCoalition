@@ -1,4 +1,10 @@
 
+#' @title PrepData
+#' @description Creates an table of wrangled data from the Physics Teacher Education Coalition website to prepare basic data of counts in each category(Major, Subject, Area) and in each program
+#' @param Year is digit numeric number of the year
+#' @param with_summary defaults to TRUE. Adds a summary (total) row and the bottom of the table.
+
+#' @export
 
 
 PrepData <- function(Year) {

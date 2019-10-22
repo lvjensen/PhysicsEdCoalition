@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Authors • PhysicsEdCoalition</title>
+<title>Creates a CSV file for desired version of wrangled data from the Physics Teacher Education Coalition report card website — PhysicsEdData • PhysicsEdCoalition</title>
 
 
 <!-- jquery -->
@@ -29,13 +29,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Authors" />
+<meta property="og:title" content="Creates a CSV file for desired version of wrangled data from the Physics Teacher Education Coalition report card website — PhysicsEdData" />
+<meta property="og:description" content="Creates a CSV file for desired version of wrangled data from the Physics Teacher Education Coalition report card website" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-authors">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -66,7 +68,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">PhysicsEdCoalition</a>
+        <a class="navbar-link" href="../index.html">PhysicsEdCoalition</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
       </span>
     </div>
@@ -74,13 +76,13 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -96,22 +98,64 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Authors</h1>
+    <h1>Creates a CSV file for desired version of wrangled data from the Physics Teacher Education Coalition report card website</h1>
+    
+    <div class="hidden name"><code>PhysicsEdData.Rd</code></div>
     </div>
 
-    <ul class="list-unstyled">
-      <li>
-        <p><strong>First Last</strong>. Author, maintainer. <a href='https://orcid.org/YOUR-ORCID-ID' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
-        </p>
-      </li>
+    <div class="ref-description">
+    <p>Creates a CSV file for desired version of wrangled data from the Physics Teacher Education Coalition report card website</p>
+    </div>
+
+    <pre class="usage"><span class='fu'>PhysicsEdData</span>(<span class='no'>Year</span>, <span class='kw'>ByProgram</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>ByProgramFileName</span> <span class='kw'>=</span> <span class='st'>"pfilename"</span>,
+  <span class='kw'>ByProgramType</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>ByProgramTypeFileName</span> <span class='kw'>=</span> <span class='st'>"ptfilename"</span>,
+  <span class='kw'>ByState</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>ByStateFileName</span> <span class='kw'>=</span> <span class='st'>"sfilename"</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>Year</th>
+      <td><p>is digit numeric number of the year</p></td>
+    </tr>
+    <tr>
+      <th>ByProgram</th>
+      <td><p>is boolean to create csv file for ByProgram</p></td>
+    </tr>
+    <tr>
+      <th>ByProgramFileName</th>
+      <td><p>is character, if ByProgram is TRUE the file will receive this name</p></td>
+    </tr>
+    <tr>
+      <th>ByProgramType</th>
+      <td><p>is boolean to create csv file for ByProgramType</p></td>
+    </tr>
+    <tr>
+      <th>ByProgramTypeFileName</th>
+      <td><p>is character, if ByProgramType is TRUE the file will receive this name</p></td>
+    </tr>
+    <tr>
+      <th>ByState</th>
+      <td><p>is boolean to create csv file for ByProgram</p></td>
+    </tr>
+    <tr>
+      <th>ByStateFileName</th>
+      <td><p>is character, if ByState is TRUE the file will receive this name</p></td>
+    </tr>
+    </table>
+
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
     </ul>
 
   </div>
-
 </div>
-
 
 
       <footer>
