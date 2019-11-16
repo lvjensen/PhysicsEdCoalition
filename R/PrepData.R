@@ -31,7 +31,7 @@ PrepData <- function(Year) {
   #
   # Ipeds <- Ipeds[!duplicated(Ipeds$ProgramCode),]
 
-  if (Year == 2012) {
+  if (Year %in% c(2012, 2013, 2014)) {
 
     Ipeds <- Ipeds %>%
       select(ProgramCode, IPEDS)
