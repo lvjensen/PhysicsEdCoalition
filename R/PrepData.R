@@ -26,13 +26,28 @@ PrepData <- function(Year) {
     Ipeds <- read_excel(dataset2)
   }
 
-  colnames(Ipeds)[3] <- 'ProgramCode'
-  colnames(Ipeds)[4] <- 'Program'
+  # colnames(Ipeds)[3] <- 'ProgramCode'
+  # colnames(Ipeds)[4] <- 'Program'
+  #
+  # Ipeds <- Ipeds[!duplicated(Ipeds$ProgramCode),]
 
-  Ipeds <- Ipeds[!duplicated(Ipeds$ProgramCode),]
+  if (Year == 2012) {
 
-  Ipeds <- Ipeds %>%
-    select(ProgramCode, IPEDS)
+    Ipeds <- Ipeds %>%
+      select(ProgramCode, IPEDS)
+
+  } else {
+
+    colnames(Ipeds)[3] <- 'ProgramCode'
+    colnames(Ipeds)[4] <- 'Program'
+
+    Ipeds <- Ipeds[!duplicated(Ipeds$ProgramCode),]
+
+    Ipeds <- Ipeds %>%
+      select(ProgramCode, IPEDS)
+
+  }
+
 
   #Create Unique Program Names
   s1 <- unique(Subject$Program)
