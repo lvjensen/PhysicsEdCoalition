@@ -141,7 +141,17 @@ PrepData <- function(Year) {
     left_join(Ipeds, by = 'ProgramCode') %>%
     select(c(8, 1:7))
 
-  return(alldata3)
+  #To fix the extra rows given to years before 2015
+
+  alldata4 <- alldata3 %>%
+    mutate(newc = paste0(Program, ProgramType))
+
+  alldata5 <- alldata4[!duplicated(alldata4$newc), ]
+
+  alldata6 <- alldata5[,-9]
+
+
+  return(alldata6)
 
 }
 
