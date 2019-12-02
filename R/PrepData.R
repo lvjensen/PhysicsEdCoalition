@@ -34,7 +34,7 @@ PrepData <- function(Year) {
   if (Year %in% c(2012, 2013, 2014)) {
 
     Ipeds <- Ipeds %>%
-      select(ProgramCode, IPEDS)
+      select(ProgramCode, Program, IPEDS)
 
   } else {
 
@@ -44,7 +44,7 @@ PrepData <- function(Year) {
     Ipeds <- Ipeds[!duplicated(Ipeds$ProgramCode),]
 
     Ipeds <- Ipeds %>%
-      select(ProgramCode, IPEDS)
+      select(ProgramCode, Program, IPEDS)
 
   }
 
@@ -138,7 +138,7 @@ PrepData <- function(Year) {
     ))
 
   alldata3 <- alldata %>%
-    left_join(Ipeds, by = 'ProgramCode') %>%
+    left_join(Ipeds, by = c('ProgramCode', 'Program')) %>%
     select(c(8, 1:7))
 
   #To fix the extra rows given to years before 2015
