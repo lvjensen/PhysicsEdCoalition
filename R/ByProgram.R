@@ -21,14 +21,14 @@ ByProgram <- function(Year, with_summary = TRUE) {
 
     ProgramData <- alldata %>%
       mutate(PreparedByMajor = TotalPreppedm, PreparedByArea = TotalPreppeda, PreparedBySubject = TotalPreppeds) %>%
-      select(c(1, 2, 3, 4, 9, 10, 11)) %>%
+      select(c(1, 2, 3, 4, 5, 9, 10, 11)) %>%
       adorn_totals(name = 'USA Total')
 
   } else if (with_summary == FALSE) {
 
     ProgramData <- alldata %>%
       mutate(PreparedByMajor = TotalPreppedm, PreparedByArea = TotalPreppeda, PreparedBySubject = TotalPreppeds) %>%
-      select(c(1, 2, 3, 4, 9, 10, 11))
+      select(c(1, 2, 3, 4, 5, 9, 10, 11))
 
   }
 
