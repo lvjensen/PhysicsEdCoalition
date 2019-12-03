@@ -26,6 +26,7 @@ PrepData <- function(Year) {
     Ipeds <- read_excel(dataset2)
   }
 
+
   # colnames(Ipeds)[3] <- 'ProgramCode'
   # colnames(Ipeds)[4] <- 'Program'
   #
@@ -34,14 +35,22 @@ PrepData <- function(Year) {
   if (Year %in% c(2012, 2013, 2014)) {
 
     Ipeds <- Ipeds %>%
+      mutate(newcol = paste0(ProgramCode, Program))
+
+    Ipeds <- Ipeds[!duplicated(Ipeds$newcol),]
+
+    Ipeds <- Ipeds %>%
       select(ProgramCode, Program, IPEDS)
 
   } else {
 
-    colnames(Ipeds)[3] <- 'ProgramCode'
-    colnames(Ipeds)[4] <- 'Program'
+    colnames(Ipeds)[2] <- 'ProgramCode'
+    colnames(Ipeds)[3] <- 'Program'
 
-    Ipeds <- Ipeds[!duplicated(Ipeds$ProgramCode),]
+    Ipeds <- Ipeds %>%
+      mutate(newcol = paste0(ProgramCode, Program))
+
+    Ipeds <- Ipeds[!duplicated(Ipeds$newcol),]
 
     Ipeds <- Ipeds %>%
       select(ProgramCode, Program, IPEDS)
@@ -139,7 +148,13 @@ PrepData <- function(Year) {
 
   alldata3 <- alldata %>%
     left_join(Ipeds, by = c('ProgramCode', 'Program')) %>%
-    select(c(8, 1:7))
+    select(c(8, 1:7)) %>%
+    mutate(ProgramType = case_when(
+
+      ProgramType == 'Traditional' | ProgramType == 'Alternative, IHE-based' ~ 'IHE-based',
+      TRUE ~ 'Not IHE-based'
+
+    ))
 
   #To fix the extra rows given to years before 2015
 
