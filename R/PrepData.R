@@ -122,7 +122,7 @@ PrepData <- function(Year) {
       TRUE ~ 'is not na'
 
     )) %>%
-    filter(allna == 'is not na') %>%
+    #filter(allna == 'is not na') %>%
     select(1:7)
 
 
