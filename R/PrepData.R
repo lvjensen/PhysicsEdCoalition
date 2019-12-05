@@ -42,6 +42,19 @@ PrepData <- function(Year) {
     Ipeds <- Ipeds %>%
       select(ProgramCode, Program, IPEDS)
 
+  } else if (Year >= 2017) {
+
+    colnames(Ipeds)[3] <- 'ProgramCode'
+    colnames(Ipeds)[4] <- 'Program'
+
+    Ipeds <- Ipeds %>%
+      mutate(newcol = paste0(ProgramCode, Program))
+
+    Ipeds <- Ipeds[!duplicated(Ipeds$newcol),]
+
+    Ipeds <- Ipeds %>%
+      select(ProgramCode, Program, IPEDS)
+
   } else {
 
     colnames(Ipeds)[2] <- 'ProgramCode'
@@ -147,7 +160,7 @@ PrepData <- function(Year) {
     ))
 
   alldata3 <- alldata %>%
-    left_join(Ipeds, by = c('ProgramCode', 'Program')) %>%
+    left_join(Ipeds, by = c('Program', 'ProgramCode')) %>%
     select(c(8, 1:7)) %>%
     mutate(ProgramType = case_when(
 
