@@ -1,6 +1,6 @@
 
 #' @title ByProgram
-#' @description Creates an table of wrangled data from the Physics Teacher Education Coalition websites organized by Program(e.g. University of Arizona, Brigham Young University idaho, etc.)
+#' @description Creates a table of wrangled, aggregate data of completer counts from the Title II website in each degree completion category(Major, Subject, Area) organized by Program(e.g. University of Arizona, Brigham Young University idaho, etc.)
 #' @param Year is digit numeric number of the year
 #' @param with_summary defaults to TRUE. Adds a summary (total) row and the bottom of the table.
 

@@ -2,13 +2,13 @@ Package: PhysicsEdCoalition
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Logan",
+           family = "Jensen",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "loganvjensen@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+Description: PhysicsEdData will provide the necessary data wrangling and organization in order o facilitate analysis for the Physics Teacher Education Coalition
+License: N/A
 Encoding: UTF-8
 LazyData: true
 Imports:

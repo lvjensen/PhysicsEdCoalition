@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="What the Package Does (One Line, Title Case)">
-<meta property="og:description" content="What the package does (one paragraph).">
+<meta property="og:description" content="PhysicsEdData will provide the necessary data wrangling and organization in order o facilitate analysis for the Physics Teacher Education Coalition">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -62,6 +62,49 @@
 <div id="physicsedcoalition" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#physicsedcoalition" class="anchor"></a>PhysicsEdCoalition</h1></div>
+<p><br></p>
+<p>This R package is designed for the Physics Teacher Education Coalition(PTEC). The purpose is to simplify the way of gathering the physics program completer counts from the Title II website(<a href="https://title2.ed.gov/Public/Home.aspx" class="uri">https://title2.ed.gov/Public/Home.aspx</a>). I have detailed the functions and what they do as well as simple troubleshooting. Please submit an issue if you have any problems.</p>
+<p><br></p>
+<div id="functions" class="section level3">
+<h3 class="hasAnchor">
+<a href="#functions" class="anchor"></a>Functions</h3>
+<p><br></p>
+<p>Keep in mind all of these functions require the argument of Year to function(enter whichever year of data you are looking for)</p>
+<p><br></p>
+<p>ByProgram(Year, with_summary) - This function will provide a row of counts for each program nationally(e.g. University of Arizona, Clemson University, etc.). It also provides other basic descriptive columns and the columns for the each of the counts of those prepared by major, prepared by area, and prepared by subject.</p>
+<p><br></p>
+<p><img src="Images/byprogram.png" alt="Example of ByProgram()"></p>
+<p><br></p>
+<p>ByProgramType(Year, with_summary) - This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each program type(IHE-based and not IHE-based) for each state.</p>
+<p><br></p>
+<p><img src="Images/byprogramtype.png" alt="Example of ByProgramType()"></p>
+<p><br></p>
+<p>ByState(Year, with_summary) - This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each state.</p>
+<p><br></p>
+<p><img src="Images/bystate.png" alt="Example of ByState()"></p>
+<p><br></p>
+<p>PrepData(Year) - This function is insignificant for use to the PTEC as its intention is only to prepare data for the other functions. Essentially, it’s very similar to ByProgram() with a few differences.</p>
+<p><br></p>
+<p><img src="Images/prepdata.png" alt="Example of PrepData()"></p>
+<p><br></p>
+<p>PhysicsEdData(Year, ByProgram, ByProgramFileName, ByProgramType, ByProgramTypeFileName, ByState, ByStateFileName) - This function creates a csv file of whichever function your looking for. Answering TRUE to any of the above arguments to the function will create that table for you. Additionally, using the arguments that end in FileName will let you name the file.</p>
+</div>
+<div id="downloading" class="section level3">
+<h3 class="hasAnchor">
+<a href="#downloading" class="anchor"></a>Downloading</h3>
+<p>To download the package you will need to use devtools:</p>
+<p>install.packages(‘devtools’) library(devtools)</p>
+<p>Then you can download the PhysicsEdData package with:</p>
+<p>install_github(‘lvjensen/PhysicsEdData’)</p>
+</div>
+<div id="troubleshooting" class="section level3">
+<h3 class="hasAnchor">
+<a href="#troubleshooting" class="anchor"></a>Troubleshooting</h3>
+<p>The biggest problems I ran into while trying to download the package were involving downloaded packages. Before you download this ackage, I recommend you update every package on your machine. You can do this with the following:</p>
+<p>update.packages()</p>
+<p>However, you could still have problems downloading due to some packages not updating correctly. The most common problems are rlang and digest, however it can happen to others. You’ll need to go to their location on your computer and delete them, then reinstall them in RStudio. You can find these packages in the following places depending on your system:</p>
+<p>Windows: C:/Program Files/R/R-3.2.2/library/<package name> Mac: /Library/Frameworks/R.framework/Resources/library/<package name></package></package></p>
+</div>
 </div>
   </div>
 
@@ -69,13 +112,13 @@
     <div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
-<li>What license it uses</li>
+<li>N/A</li>
 </ul>
 </div>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>First Last <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
+<li>Logan Jensen <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 </ul>
 </div>
 
@@ -84,7 +127,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by First Last.</p>
+  <p>Developed by Logan Jensen.</p>
 </div>
 
 <div class="pkgdown">

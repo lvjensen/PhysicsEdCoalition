@@ -1,6 +1,6 @@
 
 #' @title PrepData
-#' @description Creates an table of wrangled data from the Physics Teacher Education Coalition website to prepare basic data of counts in each category(Major, Subject, Area) and in each program
+#' @description Creates a table of wrangled, aggregate data of counts from the Title II website in each degree completion category(Major, Subject, Area) and in each program(Arizona State University, Brigham Young University, etc.) and prepares it for use in other functions(ByState(), ByProgram(), ByProgramType())
 #' @param Year is digit numeric number of the year
 #' @param with_summary defaults to TRUE. Adds a summary (total) row and the bottom of the table.
 
