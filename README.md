@@ -73,3 +73,5 @@ Windows: C:/Program Files/R/R-3.2.2/library/<package name>
 Mac: /Library/Frameworks/R.framework/Resources/library/<package name>
 
 
+
+To find this all on a website, go to https://lvjensen.github.io/PhysicsEdCoalition/
