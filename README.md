@@ -6,7 +6,7 @@ This R package is designed for the Physics Teacher Education Coalition(PTEC). Th
 
 <br>
 
-##Functions
+## Functions
 
 <br>
 
@@ -14,7 +14,7 @@ Keep in mind all of these functions require the argument of 'Year' to function(e
 
 <br>
 
-####ByProgram(Year, with_summary) 
+#### ByProgram(Year, with_summary) 
 
 <br>
 
@@ -26,7 +26,7 @@ This function will provide a row of counts for each program nationally(e.g. Univ
 
 <br>
 
-####ByProgramType(Year, with_summary)
+#### ByProgramType(Year, with_summary)
 
 <br>
 
@@ -38,7 +38,7 @@ This function will provide a row of the counts of those prepared by major, those
 
 <br>
 
-####ByState(Year, with_summary)
+#### ByState(Year, with_summary)
 
 <br>
 
@@ -50,7 +50,7 @@ This function will provide a row of the counts of those prepared by major, those
 
 <br>
 
-####PrepData(Year)
+#### PrepData(Year)
 
 <br>
 
@@ -62,7 +62,7 @@ This function is insignificant for use to the PTEC as its intention is only to p
 
 <br>
 
-####PhysicsEdData(Year, ByProgram, ByProgramFileName, ByProgramType, ByProgramTypeFileName, ByState, ByStateFileName)
+#### PhysicsEdData(Year, ByProgram, ByProgramFileName, ByProgramType, ByProgramTypeFileName, ByState, ByStateFileName)
 
 <br>
 
@@ -70,7 +70,7 @@ This function creates a csv file of whichever function your looking for. Answeri
 
 <br>
 
-##Downloading
+## Downloading
 
 To download the package you will need to use devtools:
 
@@ -82,7 +82,7 @@ Then you can download the PhysicsEdData package with:
 install_github('lvjensen/PhysicsEdData')
 
 
-##Troubleshooting
+## Troubleshooting
 
 The biggest problems I ran into while trying to download the package were involving downloaded packages. Before you download this ackage, I recommend you update every package on your machine. You can do this with the following:
 
