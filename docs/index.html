@@ -65,41 +65,67 @@
 <p><br></p>
 <p>This R package is designed for the Physics Teacher Education Coalition(PTEC). The purpose is to simplify the way of gathering the physics program completer counts from the Title II website(<a href="https://title2.ed.gov/Public/Home.aspx" class="uri">https://title2.ed.gov/Public/Home.aspx</a>). I have detailed the functions and what they do as well as simple troubleshooting. Please submit an issue if you have any problems.</p>
 <p><br></p>
-<div id="functions" class="section level3">
-<h3 class="hasAnchor">
-<a href="#functions" class="anchor"></a>Functions</h3>
+<div id="functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#functions" class="anchor"></a>Functions</h2>
 <p><br></p>
-<p>Keep in mind all of these functions require the argument of Year to function(enter whichever year of data you are looking for)</p>
+<p>Keep in mind all of these functions require the argument of ‘Year’ to function(enter whichever year of data you are looking for)</p>
 <p><br></p>
-<p>ByProgram(Year, with_summary) - This function will provide a row of counts for each program nationally(e.g. University of Arizona, Clemson University, etc.). It also provides other basic descriptive columns and the columns for the each of the counts of those prepared by major, prepared by area, and prepared by subject.</p>
+<div id="byprogramyear-with_summary" class="section level4">
+<h4 class="hasAnchor">
+<a href="#byprogramyear-with_summary" class="anchor"></a>ByProgram(Year, with_summary)</h4>
+<p><br></p>
+<p>This function will provide a row of counts for each program nationally(e.g. University of Arizona, Clemson University, etc.). It also provides other basic descriptive columns and the columns for the each of the counts of those prepared by major, prepared by area, and prepared by subject.</p>
 <p><br></p>
 <p><img src="Images/byprogram.png" alt="Example of ByProgram()"></p>
 <p><br></p>
-<p>ByProgramType(Year, with_summary) - This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each program type(IHE-based and not IHE-based) for each state.</p>
+</div>
+<div id="byprogramtypeyear-with_summary" class="section level4">
+<h4 class="hasAnchor">
+<a href="#byprogramtypeyear-with_summary" class="anchor"></a>ByProgramType(Year, with_summary)</h4>
+<p><br></p>
+<p>This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each program type(IHE-based and not IHE-based) for each state.</p>
 <p><br></p>
 <p><img src="Images/byprogramtype.png" alt="Example of ByProgramType()"></p>
 <p><br></p>
-<p>ByState(Year, with_summary) - This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each state.</p>
+</div>
+<div id="bystateyear-with_summary" class="section level4">
+<h4 class="hasAnchor">
+<a href="#bystateyear-with_summary" class="anchor"></a>ByState(Year, with_summary)</h4>
+<p><br></p>
+<p>This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each state.</p>
 <p><br></p>
 <p><img src="Images/bystate.png" alt="Example of ByState()"></p>
 <p><br></p>
-<p>PrepData(Year) - This function is insignificant for use to the PTEC as its intention is only to prepare data for the other functions. Essentially, it’s very similar to ByProgram() with a few differences.</p>
+</div>
+<div id="prepdatayear" class="section level4">
+<h4 class="hasAnchor">
+<a href="#prepdatayear" class="anchor"></a>PrepData(Year)</h4>
+<p><br></p>
+<p>This function is insignificant for use to the PTEC as its intention is only to prepare data for the other functions. Essentially, it’s very similar to ByProgram() with a few differences.</p>
 <p><br></p>
 <p><img src="Images/prepdata.png" alt="Example of PrepData()"></p>
 <p><br></p>
-<p>PhysicsEdData(Year, ByProgram, ByProgramFileName, ByProgramType, ByProgramTypeFileName, ByState, ByStateFileName) - This function creates a csv file of whichever function your looking for. Answering TRUE to any of the above arguments to the function will create that table for you. Additionally, using the arguments that end in FileName will let you name the file.</p>
 </div>
-<div id="downloading" class="section level3">
-<h3 class="hasAnchor">
-<a href="#downloading" class="anchor"></a>Downloading</h3>
+<div id="physicseddatayear-byprogram-byprogramfilename-byprogramtype-byprogramtypefilename-bystate-bystatefilename" class="section level4">
+<h4 class="hasAnchor">
+<a href="#physicseddatayear-byprogram-byprogramfilename-byprogramtype-byprogramtypefilename-bystate-bystatefilename" class="anchor"></a>PhysicsEdData(Year, ByProgram, ByProgramFileName, ByProgramType, ByProgramTypeFileName, ByState, ByStateFileName)</h4>
+<p><br></p>
+<p>This function creates a csv file of whichever function your looking for. Answering TRUE to any of the arguments ByState, ByProgram and ByProgramType in the function will create that table for you. Additionally, using the arguments that end in FileName will let you name that file.</p>
+<p><br></p>
+</div>
+</div>
+<div id="downloading" class="section level2">
+<h2 class="hasAnchor">
+<a href="#downloading" class="anchor"></a>Downloading</h2>
 <p>To download the package you will need to use devtools:</p>
 <p>install.packages(‘devtools’) library(devtools)</p>
 <p>Then you can download the PhysicsEdData package with:</p>
 <p>install_github(‘lvjensen/PhysicsEdData’)</p>
 </div>
-<div id="troubleshooting" class="section level3">
-<h3 class="hasAnchor">
-<a href="#troubleshooting" class="anchor"></a>Troubleshooting</h3>
+<div id="troubleshooting" class="section level2">
+<h2 class="hasAnchor">
+<a href="#troubleshooting" class="anchor"></a>Troubleshooting</h2>
 <p>The biggest problems I ran into while trying to download the package were involving downloaded packages. Before you download this ackage, I recommend you update every package on your machine. You can do this with the following:</p>
 <p>update.packages()</p>
 <p>However, you could still have problems downloading due to some packages not updating correctly. The most common problems are rlang and digest, however it can happen to others. You’ll need to go to their location on your computer and delete them, then reinstall them in RStudio. You can find these packages in the following places depending on your system:</p>
