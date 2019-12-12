@@ -6,15 +6,19 @@ This R package is designed for the Physics Teacher Education Coalition(PTEC). Th
 
 <br>
 
-### Functions
+##Functions
 
 <br>
 
-Keep in mind all of these functions require the argument of Year to function(enter whichever year of data you are looking for)
+Keep in mind all of these functions require the argument of 'Year' to function(enter whichever year of data you are looking for)
 
 <br>
 
-ByProgram(Year, with_summary) - This function will provide a row of counts for each program nationally(e.g. University of Arizona, Clemson University, etc.). It also provides other basic descriptive columns and the columns for the each of the counts of those prepared by major, prepared by area, and prepared by subject. 
+####ByProgram(Year, with_summary) 
+
+<br>
+
+This function will provide a row of counts for each program nationally(e.g. University of Arizona, Clemson University, etc.). It also provides other basic descriptive columns and the columns for the each of the counts of those prepared by major, prepared by area, and prepared by subject. 
 
 <br>
 
@@ -22,7 +26,11 @@ ByProgram(Year, with_summary) - This function will provide a row of counts for e
 
 <br>
 
-ByProgramType(Year, with_summary) - This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each program type(IHE-based and not IHE-based) for each state.
+####ByProgramType(Year, with_summary)
+
+<br>
+
+This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each program type(IHE-based and not IHE-based) for each state.
 
 <br>
 
@@ -30,7 +38,11 @@ ByProgramType(Year, with_summary) - This function will provide a row of the coun
 
 <br>
 
-ByState(Year, with_summary) - This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each state. 
+####ByState(Year, with_summary)
+
+<br>
+
+This function will provide a row of the counts of those prepared by major, those prepared by area, and those prepared by subject for each state. 
 
 <br>
 
@@ -38,7 +50,11 @@ ByState(Year, with_summary) - This function will provide a row of the counts of 
 
 <br>
 
-PrepData(Year) - This function is insignificant for use to the PTEC as its intention is only to prepare data for the other functions. Essentially, it's very similar to ByProgram() with a few differences.
+####PrepData(Year)
+
+<br>
+
+This function is insignificant for use to the PTEC as its intention is only to prepare data for the other functions. Essentially, it's very similar to ByProgram() with a few differences.
 
 <br>
 
@@ -46,10 +62,15 @@ PrepData(Year) - This function is insignificant for use to the PTEC as its inten
 
 <br>
 
-PhysicsEdData(Year, ByProgram, ByProgramFileName, ByProgramType, ByProgramTypeFileName, ByState, ByStateFileName) - This function creates a csv file of whichever function your looking for. Answering TRUE to any of the above arguments to the function will create that table for you. Additionally, using the arguments that end in FileName will let you name the file.
+####PhysicsEdData(Year, ByProgram, ByProgramFileName, ByProgramType, ByProgramTypeFileName, ByState, ByStateFileName)
 
+<br>
 
-###Downloading
+This function creates a csv file of whichever function your looking for. Answering TRUE to any of the arguments ByState, ByProgram and ByProgramType in the function will create that table for you. Additionally, using the arguments that end in FileName will let you name that file.
+
+<br>
+
+##Downloading
 
 To download the package you will need to use devtools:
 
@@ -61,7 +82,7 @@ Then you can download the PhysicsEdData package with:
 install_github('lvjensen/PhysicsEdData')
 
 
-###Troubleshooting
+##Troubleshooting
 
 The biggest problems I ran into while trying to download the package were involving downloaded packages. Before you download this ackage, I recommend you update every package on your machine. You can do this with the following:
 
