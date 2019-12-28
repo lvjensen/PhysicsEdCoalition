@@ -75,7 +75,9 @@ This function creates a csv file of whichever function your looking for. Answeri
 To download the package you will need to use devtools:
 
 install.packages('devtools')
+B
 library(devtools)
+
 
 Then you can download the PhysicsEdData package with:
 
