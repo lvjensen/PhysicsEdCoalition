@@ -19,7 +19,7 @@ PhysicsEdData <- function(Year, ByProgram = FALSE, ByProgramFileName = 'pfilenam
 
 
 
-  read_tsv(dataset)
+  #read_tsv(dataset)
   dataset <- str_replace_all(dataset, '\\\\', '\\/')
   assign(paste0('Subject'), read_excel(dataset, sheet = 'PreparedBySubject'))
   assign(paste0('Major'), read_excel(dataset, sheet = 'PreparedByMajor'))
