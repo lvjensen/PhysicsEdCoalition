@@ -128,7 +128,7 @@ PhysicsEdData <- function(Year, ByProgram = FALSE, ByProgramFileName = 'pfilenam
 
     pdata <- ProgramData
 
-    #write.csv(ProgramData, paste0(ByProgramFileName,".csv"), row.names = FALSE)
+    write.csv(ProgramData, paste0(ByProgramFileName,".csv"), row.names = FALSE)
 
   }
 
@@ -149,7 +149,7 @@ PhysicsEdData <- function(Year, ByProgram = FALSE, ByProgramFileName = 'pfilenam
 
     ptdata <- alldata1
 
-    #write.csv(alldata1, paste0(ByProgramTypeFileName, ".csv"), row.names = FALSE)
+    write.csv(alldata1, paste0(ByProgramTypeFileName, ".csv"), row.names = FALSE)
 
   }
 
@@ -162,7 +162,7 @@ PhysicsEdData <- function(Year, ByProgram = FALSE, ByProgramFileName = 'pfilenam
 
     sdata <- StateData
 
-    #write.csv(StateData, paste0(ByStateFileName, ".csv"), row.names = FALSE)
+    write.csv(StateData, paste0(ByStateFileName, ".csv"), row.names = FALSE)
 
   }
 
