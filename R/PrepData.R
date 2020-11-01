@@ -55,6 +55,13 @@ PrepData <- function(Year) {
     Ipeds <- Ipeds %>%
       select(ProgramCode, Program, IPEDS)
 
+    if (Year == 2019) {
+
+      Ipeds <- Ipeds %>%
+        mutate(InstCode = str_pad(InstCode, 3, pad = "0"))
+
+    }
+
   } else {
 
     colnames(Ipeds)[2] <- 'ProgramCode'
