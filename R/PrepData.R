@@ -52,15 +52,16 @@ PrepData <- function(Year) {
 
     Ipeds <- Ipeds[!duplicated(Ipeds$newcol),]
 
-    Ipeds <- Ipeds %>%
-      select(ProgramCode, Program, IPEDS)
-
     if (Year == 2019) {
 
       Ipeds <- Ipeds %>%
-        mutate(InstCode = str_pad(InstCode, 3, pad = "0"))
+        mutate(ProgramCode = str_pad(ProgramCode, 3, pad = "0"))
 
     }
+
+    Ipeds <- Ipeds %>%
+      select(ProgramCode, Program, IPEDS)
+
 
   } else {
 
