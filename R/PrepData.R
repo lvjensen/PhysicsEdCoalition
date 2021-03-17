@@ -41,7 +41,7 @@ PrepData <- function(Year) {
   if (Year %in% c(2012, 2013, 2014)) {
 
     tempfile(fileext = '.xls')
-    download(paste0("https://title2.ed.gov/Public/DataTools/", year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
+    download(paste0("https://title2.ed.gov/Public/DataTools/", Year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
 
     if (year == 2012) {
       Ipeds <- read_excel(dataset2, sheet = 'All')
@@ -60,7 +60,7 @@ PrepData <- function(Year) {
   } else if (Year >= 2017 & Year < 2020) {
 
     tempfile(fileext = '.xls')
-    download(paste0("https://title2.ed.gov/Public/DataTools/", year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
+    download(paste0("https://title2.ed.gov/Public/DataTools/", Year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
 
     if (year == 2012) {
       Ipeds <- read_excel(dataset2, sheet = 'All')
@@ -99,11 +99,10 @@ PrepData <- function(Year) {
     colnames(Ipeds)[4] <- 'Program'
     colnames(Ipeds)[5] <- 'IPEDS'
 
-
   } else {
 
     tempfile(fileext = '.xls')
-    download(paste0("https://title2.ed.gov/Public/DataTools/", year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
+    download(paste0("https://title2.ed.gov/Public/DataTools/", Year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
 
     if (year == 2012) {
       Ipeds <- read_excel(dataset2, sheet = 'All')
