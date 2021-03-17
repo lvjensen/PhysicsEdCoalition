@@ -63,6 +63,16 @@ PrepData <- function(Year) {
       select(ProgramCode, Program, IPEDS)
 
 
+  } else if (Year >= 2020) {
+
+    assign(paste0('Ipeds'), readxl::read_excel(dataset, sheet = 'Program'))
+    Ipeds <- Ipeds %>%
+      select(ReportYear, State, ProgramCode, Program, ProgramType, IPEDSID)
+
+    colnames(Ipeds)[4] <- 'Program'
+    colnames(Ipeds)[5] <- 'IPEDS'
+
+
   } else {
 
     colnames(Ipeds)[2] <- 'ProgramCode'
