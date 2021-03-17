@@ -94,10 +94,9 @@ PrepData <- function(Year) {
     assign(paste0('Ipeds'), readxl::read_excel(dataset, sheet = 'Program'))
 
     Ipeds <- Ipeds %>%
-      select(ReportYear, State, ProgramCode, Program, ProgramType, IPEDSID)
+      select(ProgramCode, Program, IPEDSID)
 
-    colnames(Ipeds)[4] <- 'Program'
-    colnames(Ipeds)[5] <- 'IPEDS'
+    colnames(Ipeds)[3] <- 'IPEDS'
 
   } else {
 
