@@ -18,13 +18,8 @@ PrepData <- function(Year) {
   assign(paste0('Area'), readxl::read_excel(dataset, sheet = 'PreparedByArea'))
 
   dataset2 <- tempfile(fileext = '.xls')
-  download(paste0("https://title2.ed.gov/Public/DataTools/", Year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
 
-  if (Year == 2012) {
-    Ipeds <- read_excel(dataset2, sheet = 'All')
-  } else {
-    Ipeds <- read_excel(dataset2)
-  }
+
 
 
   # colnames(Ipeds)[3] <- 'ProgramCode'
@@ -33,6 +28,14 @@ PrepData <- function(Year) {
   # Ipeds <- Ipeds[!duplicated(Ipeds$ProgramCode),]
 
   if (Year %in% c(2012, 2013, 2014)) {
+
+    download(paste0("https://title2.ed.gov/Public/DataTools/", Year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
+
+    if (Year == 2012) {
+      Ipeds <- read_excel(dataset2, sheet = 'All')
+    } else {
+      Ipeds <- read_excel(dataset2)
+    }
 
     Ipeds <- Ipeds %>%
       mutate(newcol = paste0(ProgramCode, Program))
@@ -44,6 +47,14 @@ PrepData <- function(Year) {
 
   } else if (Year >= 2017) {
 
+    download(paste0("https://title2.ed.gov/Public/DataTools/", Year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
+
+    if (Year == 2012) {
+      Ipeds <- read_excel(dataset2, sheet = 'All')
+    } else {
+      Ipeds <- read_excel(dataset2)
+    }
+
     colnames(Ipeds)[3] <- 'ProgramCode'
     colnames(Ipeds)[4] <- 'Program'
 
@@ -53,6 +64,14 @@ PrepData <- function(Year) {
     Ipeds <- Ipeds[!duplicated(Ipeds$newcol),]
 
     if (Year == 2019) {
+
+      download(paste0("https://title2.ed.gov/Public/DataTools/", Year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
+
+      if (Year == 2012) {
+        Ipeds <- read_excel(dataset2, sheet = 'All')
+      } else {
+        Ipeds <- read_excel(dataset2)
+      }
 
       Ipeds <- Ipeds %>%
         mutate(ProgramCode = str_pad(ProgramCode, 3, pad = "0"))
@@ -74,6 +93,14 @@ PrepData <- function(Year) {
 
 
   } else {
+
+    download(paste0("https://title2.ed.gov/Public/DataTools/", Year, "/IPEDS_Crosswalk.xls"), mode = 'wb', destfile = dataset2)
+
+    if (Year == 2012) {
+      Ipeds <- read_excel(dataset2, sheet = 'All')
+    } else {
+      Ipeds <- read_excel(dataset2)
+    }
 
     colnames(Ipeds)[2] <- 'ProgramCode'
     colnames(Ipeds)[3] <- 'Program'
