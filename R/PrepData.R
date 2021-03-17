@@ -96,7 +96,6 @@ PrepData <- function(Year) {
     Ipeds <- Ipeds %>%
       select(ProgramCode, Program, IPEDSID)
 
-    colnames(Ipeds)[2] <- 'Program'
     colnames(Ipeds)[3] <- 'IPEDS'
 
   } else {
